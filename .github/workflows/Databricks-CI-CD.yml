@@ -38,13 +38,13 @@ on:
       # This is where in your Databricks workspace your notebooks will be deployed
       # Typically this is under a Folder under the Workspace and not under a specific user's folder
       NOTEBOOK_DEPLOYMENT_PATH:
-        description: 'notebooks/MyProject'
+        description: 'Notebooks Deployment Path to Databricks'
         required: true
         default: '/MyProject'
 
       # This resource group for the Databricks workspace and KeyVault
       RESOURCE_GROUP:
-        description: 'Databricks-AzDevOps'
+        description: 'Resource Group Name'
         required: true
         default: 'Databricks-MyProject'
 
@@ -56,13 +56,13 @@ on:
 
       # This is the name of your Azure Databricks resource
       WORKSPACE_NAME:
-        description: 'Databricks-AzDevOps-Demo-Dev'
+        description: 'Databricks workspace name'
         required: true
         default: 'Databricks-MyProject'
 
       # This is a KeyVault for holding the Service Principal to make Databricks API calls and to hold Databricks KeyVault backed Secrets
       KEY_VAULT_NAME:
-        description: 'KV-Databricks-Dev'
+        description: 'KeyVault name'
         required: true
         default: 'KeyVault-MyProject'
 
