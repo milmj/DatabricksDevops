@@ -75,7 +75,7 @@ on:
       # Inialize the system
       # Note: We only want to run the KeyVault ARM template once.  If you keep re-running, then you will OVERWRITE your values
       MODE:
-        description: 'Initialize KeyVault'
+        description: 'Deployment Mode (Databricks or Initialize-KeyVault)'
         required: true
         default: 'Initialize KeyVault'
 
