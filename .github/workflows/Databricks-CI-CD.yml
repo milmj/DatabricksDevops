@@ -211,7 +211,7 @@ jobs:
     - name: Login via Az module
       uses: azure/login@v1.1
       with:
-        creds: '${{ secrets.AZURE_CREDENTIALS }}-Dev'
+        creds: ${{ secrets.AZURE_CREDENTIALS }}-DEV
         # set this if you will be using PowerShell
         # enable-AzPSSession: true 
 
@@ -341,7 +341,7 @@ jobs:
     - name: Login via Az module
       uses: azure/login@v1.1
       with:
-        creds: '${{ secrets.AZURE_CREDENTIALS }}-QA'
+        creds: ${{ secrets.AZURE_CREDENTIALS }}-QA
         # set this if you will be using PowerShell
         # enable-AzPSSession: true 
 
@@ -471,7 +471,7 @@ jobs:
     - name: Login via Az module
       uses: azure/login@v1.1
       with:
-        creds: '${{ secrets.AZURE_CREDENTIALS }}-Prod'
+        creds: ${{ secrets.AZURE_CREDENTIALS }}-PROD
         # set this if you will be using PowerShell
         # enable-AzPSSession: true 
 
