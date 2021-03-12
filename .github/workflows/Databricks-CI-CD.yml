@@ -70,7 +70,7 @@ on:
       SUBSCRIPTION_ID:
         description: 'Azure Subscription Id'
         required: true
-        default: '0a5900f7-064e-416a-9ea4-147c47c89238'
+        default: '00000000-0000-0000-0000-000000000000'
 
       # Inialize the system
       # Note: We only want to run the KeyVault ARM template once.  If you keep re-running, then you will OVERWRITE your values
@@ -152,7 +152,7 @@ jobs:
     needs: Build
     runs-on: ubuntu-latest
     env:
-      resourceGroupName: '${{ github.event.inputs.RESOURCE_GROUP }}-Dev-RG'
+      resourceGroupName: '${{ github.event.inputs.RESOURCE_GROUP }}-Dev'
       databricksWorkspaceName: '${{ github.event.inputs.WORKSPACE_NAME }}-Dev'
       keyVaultName: '${{ github.event.inputs.KEY_VAULT_NAME }}-Dev'
 
@@ -211,7 +211,7 @@ jobs:
     - name: Login via Az module
       uses: azure/login@v1.1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS_DEV }}
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
         # set this if you will be using PowerShell
         # enable-AzPSSession: true 
 
@@ -282,7 +282,7 @@ jobs:
     needs: Dev
     runs-on: ubuntu-latest
     env:
-      resourceGroupName: '${{ github.event.inputs.RESOURCE_GROUP }}-QA-RG'
+      resourceGroupName: '${{ github.event.inputs.RESOURCE_GROUP }}-QA'
       databricksWorkspaceName: '${{ github.event.inputs.WORKSPACE_NAME }}-QA'
       keyVaultName: '${{ github.event.inputs.KEY_VAULT_NAME }}-QA'
 
@@ -341,7 +341,7 @@ jobs:
     - name: Login via Az module
       uses: azure/login@v1.1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS_QA }}
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
         # set this if you will be using PowerShell
         # enable-AzPSSession: true 
 
@@ -412,8 +412,8 @@ jobs:
     needs: QA
     runs-on: ubuntu-latest
     env:
-      resourceGroupName: '${{ github.event.inputs.RESOURCE_GROUP }}-PROD-RG'
-      databricksWorkspaceName: '${{ github.event.inputs.WORKSPACE_NAME }}-PROD'
+      resourceGroupName: '${{ github.event.inputs.RESOURCE_GROUP }}-Prod'
+      databricksWorkspaceName: '${{ github.event.inputs.WORKSPACE_NAME }}-Prod'
       keyVaultName: '${{ github.event.inputs.KEY_VAULT_NAME }}-Prod'
 
     steps:
@@ -471,7 +471,7 @@ jobs:
     - name: Login via Az module
       uses: azure/login@v1.1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS_PROD }}
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
         # set this if you will be using PowerShell
         # enable-AzPSSession: true 
 
