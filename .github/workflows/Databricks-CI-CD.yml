@@ -77,7 +77,7 @@ on:
       MODE:
         description: 'Deployment Mode (Databricks or Initialize-KeyVault)'
         required: true
-        default: 'Initialize KeyVault'
+        default: 'Databricks'
 
 
 jobs:
