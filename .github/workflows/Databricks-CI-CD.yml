@@ -70,14 +70,14 @@ on:
       SUBSCRIPTION_ID:
         description: 'Azure Subscription Id'
         required: true
-        default: '00000000-0000-0000-0000-000000000000'
+        default: '0a5900f7-064e-416a-9ea4-147c47c89238'
 
       # Inialize the system
       # Note: We only want to run the KeyVault ARM template once.  If you keep re-running, then you will OVERWRITE your values
       MODE:
         description: 'Deployment Mode (Databricks or Initialize-KeyVault)'
         required: true
-        default: 'Databricks'
+        default: 'Initialize-KeyVault'
 
 
 jobs:
@@ -211,7 +211,7 @@ jobs:
     - name: Login via Az module
       uses: azure/login@v1.1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}-DEV
+        creds: '${{ secrets.AZURE_CREDENTIALS }}-DEV'
         # set this if you will be using PowerShell
         # enable-AzPSSession: true 
 
@@ -341,7 +341,7 @@ jobs:
     - name: Login via Az module
       uses: azure/login@v1.1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}-QA
+        creds: '${{ secrets.AZURE_CREDENTIALS }}_QA'
         # set this if you will be using PowerShell
         # enable-AzPSSession: true 
 
@@ -471,7 +471,7 @@ jobs:
     - name: Login via Az module
       uses: azure/login@v1.1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}-PROD
+        creds: '${{ secrets.AZURE_CREDENTIALS }}_PROD'
         # set this if you will be using PowerShell
         # enable-AzPSSession: true 
 
